@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring_tx" />
+        <module name="git_hotFix_demo01" />
         <module name="spring_aop" />
         <module name="spring_aop_xml" />
         <module name="git_dev_demo01" />
