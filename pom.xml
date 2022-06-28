@@ -14,6 +14,7 @@
         <module>spring_aop_xml</module>
       <module>spring_jdbc</module>
         <module>spring_tx</module>
+        <module>git_dev_demo01</module>
     </modules>
 
     <name>spring</name>
