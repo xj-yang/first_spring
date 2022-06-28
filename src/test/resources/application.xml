@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        bean的实例化指的就是bean的创建
+    -->
+
+    <bean id="person" class="com.atguigu.pojo.Person" name="person2"
+        p:age="10"
+        p:name="lucy"
+    />
+    <alias name="person" alias="person3"/>
+
+    <!--使用静态工厂的形式来实例化bean-->
+    <bean id="person4" class="com.atguigu.pojo.StaticFactory" factory-method="getPerson" autowire="byName"/>
+
+    <!--实例化工厂的形式来实例化bean-->
+    <bean id="person5" factory-bean="instance" factory-method="getPerson" />
+
+    <bean id="person6" class="com.atguigu.pojo.Person">
+        <property name="name">
+            <idref bean="person5"/>
+        </property>
+    </bean>
+    <bean id="instance" class="com.atguigu.pojo.InstanceFactory"/>
+
+
+    <!--DI 构造器注入-->
+    <!--以下会产生循环依赖的问题-->
+<!--    <bean id="aclass" class="com.atguigu.pojo.A"> &lt;!&ndash;BeanCurrentlyInCreationException&ndash;&gt;-->
+<!--        <constructor-arg ref="bclass"/>-->
+<!--    </bean>-->
+<!--    <bean id="bclass" class="com.atguigu.pojo.B"> &lt;!&ndash;BeanCurrentlyInCreationException&ndash;&gt;-->
+<!--        <constructor-arg ref="aclass"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="cclass" class="com.atguigu.pojo.C"> &lt;!&ndash;BeanCurrentlyInCreationException&ndash;&gt;-->
+<!--       <property name="d" ref="dclass"/>-->
+<!--    </bean>-->
+<!--    <bean id="dclass" class="com.atguigu.pojo.D"> &lt;!&ndash;BeanCurrentlyInCreationException&ndash;&gt;-->
+<!--       <property name="c">-->
+<!--           <ref bean="cclass"/>-->
+<!--       </property>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;spring的自动装配 start&ndash;&gt;-->
+<!--    <bean id="fclass" class="com.atguigu.pojo.F" autowire="constructor">-->
+<!--    </bean>-->
+<!--    <bean id="e" class="com.atguigu.pojo.E"/>-->
+    <!--spring的自动装配 end-->
+</beans>

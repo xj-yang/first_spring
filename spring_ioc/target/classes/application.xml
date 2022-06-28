@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--
+    开启注解功能:<context:component-scan base-package="com.atguigu"/>
+    base-package:配置的是组件扫描的基础包
+    -->
+    <context:component-scan base-package="com.atguigu" >
+<!--        <context:exclude-filter type="" expression=""/>-->
+<!--        <context:include-filter type="" expression=""/>-->
+    </context:component-scan>
+
+    <!--
+    bean的生命周期：bean在ioc容器初始化时会调用初始化方法，并且在bean的销毁时会调用销毁方法
+
+    -->
+    <bean id="person" class="com.atguigu.ioc.pojo.Person" init-method="personInit" destroy-method="personDestory">
+        <property name="age" value="12"/>
+        <property name="name" value="lucy"/>
+    </bean>
+
+    <bean id="car" class="com.atguigu.ioc.pojo.Car">
+        <property name="name" value="byd"/>
+        <property name="price" value="#{12342.2*12}"/>
+    </bean>
+
+    <!--
+        spring的表达式，简称为SpEL表达式：
+            和jsp中的EL表达式的格式区别：
+                EL: ${}
+                SpEL: #{}
+        作用：
+            可以操作字面量，所有的运算符都支持;
+            可以操作bean对象；
+            可以操作bean对象并且调用对象的值;
+            可以调用静态方法；
+                格式：#{T(全类名).静态方法()}
+            可以调用非静态方法；
+                格式：对象名.方法
+    -->
+    <bean id="person02" class="com.atguigu.ioc.pojo.Person">
+        <property name="age" value="#{12+2}"/>
+        <property name="name" value="#{person.age}"/>
+        <property name="car" value="#{car}"/>
+        <property name="email" value="#{UUID.rundom()}"/>
+    </bean>
+    <bean id="myBeanPostProcessor" class="com.atguigu.ioc.MyBeanPostProcessor"/>
+</beans>

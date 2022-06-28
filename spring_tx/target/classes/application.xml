@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+">
+
+    <context:component-scan base-package="com.atguigu"/>
+
+    <!--加载资源信息-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <!--添加druid数据源组件-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <!--设置数据源的基本信息-->
+        <property name="driverClassName" value="${db.driverClass}"/>
+        <property name="url" value="${db.url}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+        <property name="initialSize" value="10"/>
+        <property name="maxActive" value="10"/>
+    </bean>
+
+    <!--为spring内部提供的操作数据库的组件jdbcTemplate绑定数据源-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--配置spring声明式事务相关的配置 start-->
+    <!--
+    配置事务管理器：
+    事务管理器的接口 PlatformTransactionManager，对于不同的实现找它的实现类就好
+    事务操作其实也是基于aop的，事务管理器就相当于aop中的切面类
+    -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--
+    开启基于注解的事务配置
+    transaction-manager:如果事务管理器的id就叫transactionManager，那么该属性是可以不配置的。如果不是则需要指定事务管理器。
+    -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!--配置spring声明式事务相关的配置 end-->
+</beans>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <!--开启组件扫描-->
+   <!-- <context:component-scan base-package="com.atguigu.aop"/>-->
+
+
+    <!--组件 start-->
+    <!--目标类组件-->
+    <bean id="calculator" class="com.atguigu.aop.Calculator"/>
+    <!--切面类组件-->
+    <bean id="myAspectj" class="com.atguigu.aop.MyAspectj"/>
+
+
+    <!--环绕通知类组件-->
+    <bean id="myBefore" class="com.atguigu.aop.MyBefore"/>
+    <bean id="myAfterReturn" class="com.atguigu.aop.MyAfterReturn"/>
+    <!--组件 end-->
+
+
+    <!--配置aop-->
+    <aop:config >
+        <!--配置切入点，使用切入点表达式-->
+        <aop:pointcut id="pointCut1" expression="execution(* com.atguigu.aop.Calculator.*(..))"/>
+        <!--
+        配置通知:定义一个具体通知在指定的目标方法上执行
+        例如：我们就定义一个环绕通知类在具体的方法上执行
+        怎么定义一个通知类？
+        需要实现Method***Advice接口
+
+        注意：一般很少使用
+        -->
+        <!--<aop:advisor  advice-ref="myBefore"   pointcut-ref="pointCut1"/>
+        <aop:advisor advice-ref="myAfterReturn" pointcut-ref="pointCut1"/>-->
+
+        <!--
+        配置切面
+        【常用】
+        -->
+        <aop:aspect ref="myAspectj">
+            <!--切入点的定义，使用切入点表达式-->
+            <aop:pointcut id="pointCut2" expression="execution(* com.atguigu.aop.Calculator.*(..))"/>
+            <!--前置通知-->
+            <aop:before method="before" pointcut-ref="pointCut2"/>
+            <!--后置通知-->
+            <aop:after method="after" pointcut-ref="pointCut2"/>
+            <!--返回通知-->
+            <aop:after-returning method="returnBy" pointcut-ref="pointCut2" returning="result"/>
+            <!--异常通知-->
+            <aop:after-throwing method="exceptionBy" pointcut-ref="pointCut2" throwing="exception"/>
+        </aop:aspect>
+
+    </aop:config>
+</beans>
