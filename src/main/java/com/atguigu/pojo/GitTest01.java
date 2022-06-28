@@ -8,5 +8,7 @@ public class GitTest01 {
 
     public static void main(String[] args) {
         System.out.println("this is master modify....");
+        System.out.println("this is dev modify...");
+        System.out.println("this  is hot_fix modify....");
     }
 }
