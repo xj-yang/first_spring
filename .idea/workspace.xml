@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2330de3-e37c-44a6-a854-132b7108c6fd" name="Default Changelist" comment="" />
+    <list default="true" id="e2330de3-e37c-44a6-a854-132b7108c6fd" name="Default Changelist" comment="分支master创建的第一个子项目">
+      <change afterPath="$PROJECT_DIR$/git_hotFix_demo01/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +47,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -76,14 +82,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../first_springmvc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/git_dev_demo01" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -203,10 +209,33 @@
       <workItem from="1655536556296" duration="87000" />
       <workItem from="1656304208831" duration="1429000" />
     </task>
+    <task id="LOCAL-00001" summary="分支master创建的第一个子项目">
+      <created>1656411675711</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656411675711</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="分支master创建的第一个子项目" />
+    <option name="LAST_COMMIT_MESSAGE" value="分支master创建的第一个子项目" />
   </component>
   <component name="WindowStateProjectService">
     <state x="564" y="169" key="#com.intellij.ide.util.MemberChooser" timestamp="1653298190950">
@@ -221,10 +250,14 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="489" y="199" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1653040042773" />
-    <state x="534" y="194" key="FileChooserDialogImpl" timestamp="1656307360444">
+    <state x="272" y="10" key="CommitChangelistDialog2" timestamp="1656412785675">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="534" y="194" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1656307360444" />
+    <state x="272" y="10" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1656412785675" />
+    <state x="534" y="194" key="FileChooserDialogImpl" timestamp="1656412677387">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="534" y="194" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1656412677387" />
     <state width="1258" height="2" key="GridCell.Tab.0.bottom" timestamp="1653460372721">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -257,18 +290,38 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1258" height="2" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1653460372721" />
-    <state x="260" y="87" key="SettingsEditor" timestamp="1655536621078">
+    <state x="477" y="132" key="MultipleFileMergeDialog" timestamp="1656412483013">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="260" y="87" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1655536621078" />
+    <state x="477" y="132" key="MultipleFileMergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1656412483013" />
+    <state x="419" y="114" key="NewModule_or_Project.wizard" timestamp="1656412683013">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="419" y="114" key="NewModule_or_Project.wizard/0.0.1536.834@0.0.1536.834" timestamp="1656412683013" />
+    <state x="506" y="139" key="RollbackChangesDialog" timestamp="1656411561013">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="506" y="139" key="RollbackChangesDialog/0.0.1536.834@0.0.1536.834" timestamp="1656411561013" />
+    <state x="260" y="0" key="SettingsEditor" timestamp="1656412702326">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="260" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1656412702326" />
     <state x="480" y="198" width="543" height="524" key="StructurePopup" timestamp="1653374006323">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="480" y="198" width="543" height="524" key="StructurePopup/0.0.1536.834@0.0.1536.834" timestamp="1653374006323" />
-    <state x="287" y="97" key="new project wizard" timestamp="1656410551619">
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1656412799780">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="287" y="97" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1656410551619" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1656412799780" />
+    <state x="475" y="208" key="git4idea.merge.GitPullDialog" timestamp="1656412913757">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="475" y="208" key="git4idea.merge.GitPullDialog/0.0.1536.834@0.0.1536.834" timestamp="1656412913757" />
+    <state x="287" y="97" key="new project wizard" timestamp="1656412938155">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="287" y="97" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1656412938155" />
     <state x="415" y="209" key="run.anything.popup" timestamp="1653049023407">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
